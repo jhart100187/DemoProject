@@ -1,0 +1,4 @@
+
+\set ON_ERROR_STOP on
+
+CREATE SCHEMA IF NOT EXISTS "demoproject";
