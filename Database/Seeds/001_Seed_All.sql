@@ -125,7 +125,7 @@ ON CONFLICT (id) DO NOTHING;
 -- =====================================================
 -- SHOPPING CARTS
 -- =====================================================
-INSERT INTO demoproject.products_shopping_carts (
+INSERT INTO demoproject.shopping_carts (
     id,
     user_id
 )
@@ -140,7 +140,7 @@ ON CONFLICT (id) DO NOTHING;
 -- =====================================================
 -- SHOPPING CART ITEMS
 -- =====================================================
-INSERT INTO demoproject.products_shopping_carts_items (
+INSERT INTO demoproject.shopping_carts_items (
     id,
     shopping_cart_id,
     product_id,

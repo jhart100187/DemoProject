@@ -88,19 +88,19 @@ CREATE TABLE IF NOT EXISTS demoproject.products_prices (
         ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS demoproject.products_shopping_carts (
+CREATE TABLE IF NOT EXISTS demoproject.shopping_carts (
     id uuid PRIMARY KEY,
     user_id uuid NOT NULL,
     created_at timestamptz NOT NULL DEFAULT now(),
     updated_at timestamptz NOT NULL DEFAULT now(),
 
-    CONSTRAINT fk_products_shopping_carts_users
+    CONSTRAINT fk_shopping_carts_users
         FOREIGN KEY (user_id)
         REFERENCES demoproject.users (id)
         ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS demoproject.products_shopping_carts_items (
+CREATE TABLE IF NOT EXISTS demoproject.shopping_carts_items (
     id uuid PRIMARY KEY,
     shopping_cart_id uuid NOT NULL,
     product_id uuid NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS demoproject.products_shopping_carts_items (
 
     CONSTRAINT fk_cart_items_carts
         FOREIGN KEY (shopping_cart_id)
-        REFERENCES demoproject.products_shopping_carts (id)
+        REFERENCES demoproject.shopping_carts (id)
         ON DELETE CASCADE,
 
     CONSTRAINT fk_cart_items_products

@@ -19,5 +19,5 @@ ON demoproject.products (sku);
 CREATE INDEX IF NOT EXISTS ix_products_prices_product_id
 ON demoproject.products_prices (product_id);
 
-CREATE INDEX IF NOT EXISTS ix_products_shopping_carts_items_shopping_cart_id
-ON demoproject.products_shopping_carts_items (shopping_cart_id);
+CREATE INDEX IF NOT EXISTS ix_shopping_carts_items_shopping_cart_id
+ON demoproject.shopping_carts_items (shopping_cart_id);
