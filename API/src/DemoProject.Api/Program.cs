@@ -10,7 +10,7 @@ var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 builder.Configuration["ConnectionStrings:Postgres"] = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPassword};";
 
-builder.Services.AddSingleton<INpgsqlConnectionFactory, NpgsqlConnectionFactory>();
+builder.Services.AddDomainServices();
 
 var app = builder.Build();
 

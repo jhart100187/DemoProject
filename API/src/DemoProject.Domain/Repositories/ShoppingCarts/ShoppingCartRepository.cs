@@ -183,9 +183,6 @@ public sealed class ShoppingCartRepository : IShoppingCartRepository
 
     public async Task<bool> UpdateItemQuantityAsync(Guid itemId, int newQuantity)
     {
-        if (newQuantity <= 0)
-            throw new ArgumentOutOfRangeException(nameof(newQuantity), "Quantity must be greater than zero.");
-
         const string sql = """
             UPDATE demoproject.shopping_carts_items
             SET quantity = @Quantity
